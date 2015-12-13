@@ -10,7 +10,16 @@ BNF.off(); // Okay, back to standard view
 ```
 
 ## Browser support
-Not tested everywhere yet. Just hold your horses for now. I will update this project in the next few days.
+Tested and working:
+* Firefox,
+* Chrome/Chromium,
+* Opera (on Presto),
+* Opera (on Blink),
+* IE (11, 10, 9),
+* Safari,
+* BlackBerry Browser (Webkit).
+
+I would really appreciate feedback from Android and iOS browsers.
 
 ## About the author
 * [underovsky.com](http://underovsky.com)

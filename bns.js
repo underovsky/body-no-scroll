@@ -1,5 +1,5 @@
 /*
-Body No-scroll
+Body no-scroll
 https://github.com/underovsky/body-no-scroll
 The MIT License (MIT)
 Copyright (c) 2015 Krzysztof Rusnarczyk

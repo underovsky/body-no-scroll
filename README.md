@@ -2,11 +2,22 @@
 Sometimes you are so annoyed with browsers non-standard behaviours that you write a JS plugin. This simple piece of code blocks the scrolling of body while opening modals or overlays. It also saves scroll position.
 
 ## Use
-Include the plugin file. To turn no-scroll on/off use these methods.
+Include the plugin file (`bns.js`). To turn no-scroll on/off use these methods.
 
 ```
-BNF.on(); // I just opened a modal and want background to be non-scrollable
-BNF.off(); // Okay, back to standard view
+BNS.on(); // I just opened a modal and want background to be non-scrollable
+BNS.off(); // Okay, back to standard view
+```
+
+You can also apply your own classes to body each time you call on/off.
+
+```
+BNS.set({
+	classes: 'one two three'
+});
+
+BNS.on(); // Now body has classes 'one two three'
+BNS.off(); // Classes removed
 ```
 
 ## Browser support

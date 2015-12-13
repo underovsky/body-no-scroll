@@ -10,20 +10,29 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 			prevScroll: 0,
 			prevPosition: '',
 			prevOverflow: '',
-			on: false
+			prevClasses: '',
+			on: false,
+			classes: ''
 		};
 		
 		var getPrev = function() {
 			settings.prevScroll = (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
 			settings.prevPosition = document.body.style.position;
 			settings.prevOverflow = document.body.style.overflow;
+			settings.prevClasses = document.body.className;
 		};
 		
 		return {
+			set: function(data) {
+				settings.classes = data.classes;
+			},
 			on: function() {
 				if (settings.on) return;
 				settings.on = true;
+				
 				getPrev();
+				
+				document.body.className = document.body.className + ' ' + settings.classes;
 				document.body.style.position = 'fixed';
 				document.body.style.overflow = 'hidden';
 				document.body.style.top = -settings.prevScroll + 'px';
@@ -31,6 +40,8 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 			off: function() {
 				if (!settings.on) return;
 				settings.on = false;
+				
+				document.body.className = settings.prevClasses;
 				document.body.style.position = settings.prevPosition;
 				document.body.style.overflow = settings.prevOverflow;
 				document.body.style.top = 0;

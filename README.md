@@ -32,6 +32,9 @@ Tested and working:
 
 I would really appreciate feedback from Android and iOS browsers.
 
+## Known issues
+On some mobile browsers you may see a quick jump while applying on/off.
+
 ## About the author
 * [underovsky.com](http://underovsky.com)
 * [twitter.com/underovsky](https://twitter.com/underovsky)

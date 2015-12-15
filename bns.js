@@ -26,6 +26,9 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 			set: function(data) {
 				settings.classes = data.classes;
 			},
+			isOn: function() {
+				return settings.on;
+			},
 			on: function() {
 				if (settings.on) return;
 				settings.on = true;
@@ -46,7 +49,7 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 				document.body.style.overflow = settings.prevOverflow;
 				document.body.style.top = 0;
 				window.scrollTo(0, settings.prevScroll);
-			}
+			},
 		};
 	}
 	

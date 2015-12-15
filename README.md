@@ -20,6 +20,12 @@ BNS.on(); // Now body has classes 'one two three'
 BNS.off(); // Classes removed
 ```
 
+To check if BNS is currently on.
+
+````
+BNS.isOn();
+````
+
 ## Browser support
 Tested and working:
 * Firefox,

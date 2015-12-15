@@ -49,7 +49,7 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 				document.body.style.overflow = settings.prevOverflow;
 				document.body.style.top = 0;
 				window.scrollTo(0, settings.prevScroll);
-			},
+			}
 		};
 	}
 	

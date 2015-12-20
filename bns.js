@@ -29,13 +29,15 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 			isOn: function() {
 				return settings.on;
 			},
-			on: function() {
+			on: function(additionalClasses) {
+				if (typeof additionalClasses === 'undefined') additionalClasses = '';
+				
 				if (settings.on) return;
 				settings.on = true;
 				
 				getPrev();
 				
-				document.body.className = document.body.className + ' ' + settings.classes;
+				document.body.className = document.body.className + ' ' + settings.classes + ' ' + additionalClasses;
 				document.body.style.position = 'fixed';
 				document.body.style.overflow = 'hidden';
 				document.body.style.top = -settings.prevScroll + 'px';

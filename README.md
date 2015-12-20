@@ -20,6 +20,12 @@ BNS.on(); // Now body has classes 'one two three'
 BNS.off(); // Classes removed
 ```
 
+In some cases you may want to add classes to body just for specific calls.
+
+```
+BNS.on('classname'); // Now body has class 'classname' and classes added by set method
+```
+
 To check if BNS is currently on.
 
 ````

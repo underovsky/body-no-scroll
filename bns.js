@@ -16,7 +16,7 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 		};
 		
 		var getPrev = function() {
-			settings.prevScroll = (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
+			settings.prevScroll = (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
 			settings.prevPosition = document.body.style.position;
 			settings.prevOverflow = document.body.style.overflow;
 			settings.prevClasses = document.body.className;
@@ -37,19 +37,21 @@ Copyright (c) 2015 Krzysztof Rusnarczyk
 				
 				getPrev();
 				
-				document.body.className = document.body.className + ' ' + settings.classes + ' ' + additionalClasses;
-				document.body.style.position = 'fixed';
-				document.body.style.overflow = 'hidden';
+				document.body.className = document.body.className + ' ' + settings.classes + ' ' + additionalClasses; 
 				document.body.style.top = -settings.prevScroll + 'px';
+				setTimeout(function() {
+					document.body.style.position = 'fixed';
+				}, 0); // WebKit/Blink bugfix
+				document.body.style.overflow = 'hidden';
 			},
 			off: function() {
 				if (!settings.on) return;
 				settings.on = false;
 				
 				document.body.className = settings.prevClasses;
+				document.body.style.top = 0;
 				document.body.style.position = settings.prevPosition;
 				document.body.style.overflow = settings.prevOverflow;
-				document.body.style.top = 0;
 				window.scrollTo(0, settings.prevScroll);
 			}
 		};
